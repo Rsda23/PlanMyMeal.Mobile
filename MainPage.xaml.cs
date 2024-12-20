@@ -20,6 +20,11 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private async void Btn_Login(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//Login");
+        }
     }
 
 }
