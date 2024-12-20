@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanMyMeal_Domain.SubscribePage"
+             Title="SubscribePage">
+    <Grid RowDefinitions="1*,8*,1*">
+        <Frame CornerRadius="0" 
+       Grid.Row="1"
+       VerticalOptions="CenterAndExpand"
+       Margin="40, 0">
+            <VerticalStackLayout Spacing="10">
+                <StackLayout IsVisible="True" x:Name="Login">
+                    <Label Text="Inscription" Padding="0, 0, 5, 0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Sasissez un identifiant et votre adresse email." Padding="0, 0, 10, 0" HorizontalTextAlignment="Center" FontSize="12"/>
+                    <Frame Padding="10">
+                        <Grid ColumnDefinitions="5,*">
+                            <Entry VerticalOptions="Center" Placeholder="Identifiant" FontSize="11" Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="10, 0, 10, 0">
+                        <Grid ColumnDefinitions="5,*">
+                            <Entry VerticalOptions="Center" Placeholder="Email" FontSize="11" Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+
+                    <Button Clicked="Btn_Next" Text="Suivant" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                </StackLayout>
+
+                <StackLayout IsVisible="False" x:Name="Password">
+                    <Label Text="Inscription" Padding="0, 0, 5, 0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold"/>
+                    <Label Text="Choisissez un mot de passe sécurisé en combinant lettres, chiffres et caractères spéciaux." Padding="0, 0, 10, 0" HorizontalTextAlignment="Center" FontSize="12"/>
+                    <Frame Padding="10">
+                        <Grid ColumnDefinitions="5,*">
+                            <Entry VerticalOptions="Center" Placeholder="Mot de passe" IsPassword="True" FontSize="11" Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Padding="10" Margin="10, 0, 10, 0">
+                        <Grid ColumnDefinitions="5,*">
+                            <Entry VerticalOptions="Center" Placeholder="Confirmation du mot de passe" IsPassword="True" FontSize="11" Grid.Column="1"/>
+                        </Grid>
+                    </Frame>
+
+                    <Button Clicked="Btn_Main" Text="S'inscrire" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                </StackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Vous avez un compte ?" FontSize="12" VerticalTextAlignment="Center" />
+                    <Label Text="Connectez-vous" FontAttributes="Bold" FontSize="13" Margin="10, 0, 0, 0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Btn_Login" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
