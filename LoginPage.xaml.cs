@@ -14,15 +14,15 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new SubscribePage());
     }
-    private void Btn_PageMode(object sender, EventArgs e)
-    {
-        if (Application.Current.UserAppTheme == AppTheme.Dark)
-        {
-            Application.Current.UserAppTheme = AppTheme.Light; //LightMode
-        }
-        else
-        {
-            Application.Current.UserAppTheme = AppTheme.Dark; // DarkMode
-        }
-    }
+    //private void Btn_PageMode(object sender, EventArgs e)
+    //{
+    //    if (Application.Current.UserAppTheme == AppTheme.Dark)
+    //    {
+    //        Application.Current.UserAppTheme = AppTheme.Light; //LightMode
+    //    }
+    //    else
+    //    {
+    //        Application.Current.UserAppTheme = AppTheme.Dark; // DarkMode
+    //    }
+    //}
 }

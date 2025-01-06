@@ -4,11 +4,11 @@
              x:Class="PlanMyMeal_Domain.LoginPage"
              Title="Connexion">
     <Grid RowDefinitions="1*,8*,1*">
-        <Button Text="DarkMode"
+        <!--<Button Text="DarkMode"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 Margin="10"
-                Clicked="Btn_PageMode" />
+                Clicked="Btn_PageMode" />-->
         <Frame CornerRadius="0" 
            Grid.Row="1"
            VerticalOptions="CenterAndExpand"
