@@ -8,8 +8,19 @@
     Title="PlanMyMeal_Domain">
 
     <ShellContent
-        Title="Home"
+        Title="Connexion"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="Login"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Inscription"
+        ContentTemplate="{DataTemplate local:SubscribePage}"
+        Route="Subscribe"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Accueil"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="Main"
+        Shell.NavBarIsVisible="False"/>
 
 </Shell>
