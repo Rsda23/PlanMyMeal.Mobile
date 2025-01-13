@@ -24,7 +24,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Next" Text="Suivant" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Next" Text="Suivant" BackgroundColor="{StaticResource PrimaryDark}" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
 
                 <StackLayout IsVisible="False" x:Name="Password">
@@ -42,7 +42,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Main" Text="S'inscrire" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Main" Text="S'inscrire" BackgroundColor="{StaticResource PrimaryDark}" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
 
                 <HorizontalStackLayout HorizontalOptions="Center">
