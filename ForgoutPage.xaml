@@ -18,7 +18,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Mail" Text="Suivant" BackgroundColor="{StaticResource PrimaryDark}" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Mail" Text="Suivant" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
 
                 <StackLayout IsVisible="False" x:Name="Code">
@@ -30,7 +30,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Password" Text="Valider" BackgroundColor="{StaticResource PrimaryDark}" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Password" Text="Valider" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
 
                 <StackLayout IsVisible="False" x:Name="Password">
@@ -48,7 +48,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Main" Text="Confirmer" BackgroundColor="{StaticResource PrimaryDark}" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Main" Text="Confirmer" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
             </VerticalStackLayout>
         </Frame>
