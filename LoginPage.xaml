@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PlanMyMeal_Domain.LoginPage"
-             Title="Connexion">
+             Title="Récupération">
     
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="#3c475d" StatusBarStyle="LightContent" />
@@ -37,7 +37,13 @@
 
                 <Button Clicked="Btn_Main" Text="Se connecter"  FontAttributes="Bold" HeightRequest="45" FontSize="18" />
 
-                <Label Text="Mot de passe oublié ?" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label Text="Mot de passe oublié ?" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Btn_Forgout" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Label Text="Vous n'avez pas de compte ?" FontSize="12" VerticalTextAlignment="Center"/>
                     <Label Text="Inscrivez-vous" FontAttributes="Bold" FontSize="13" Margin="10, 0, 0, 0">

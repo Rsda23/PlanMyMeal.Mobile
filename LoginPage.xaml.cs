@@ -14,6 +14,11 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new SubscribePage());
     }
+
+    private async void Btn_Forgout(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ForgoutPage());
+    }
     //private void Btn_PageMode(object sender, EventArgs e)
     //{
     //    if (Application.Current.UserAppTheme == AppTheme.Dark)

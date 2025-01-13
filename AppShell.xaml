@@ -13,6 +13,11 @@
         Route="Login"
         Shell.NavBarIsVisible="False"/>
     <ShellContent
+        Title="Récupération"
+        ContentTemplate="{DataTemplate local:ForgoutPage}"
+        Route="Forgout"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
         Title="Inscription"
         ContentTemplate="{DataTemplate local:SubscribePage}"
         Route="Subscribe"
