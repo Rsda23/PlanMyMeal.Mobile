@@ -13,7 +13,7 @@
         Route="Login"
         Shell.NavBarIsVisible="False"/>
     <ShellContent
-        Title="Récupération"
+        Title="Recuperation"
         ContentTemplate="{DataTemplate local:ForgoutPage}"
         Route="Forgout"
         Shell.NavBarIsVisible="False"/>
@@ -22,10 +22,21 @@
         ContentTemplate="{DataTemplate local:SubscribePage}"
         Route="Subscribe"
         Shell.NavBarIsVisible="False"/>
-    <ShellContent
-        Title="Accueil"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="Main"
-        Shell.NavBarIsVisible="False"/>
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent
+                Title="Accueil"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="Main"
+                Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Profil" Icon="profil.png">
+            <ShellContent
+                Title="Profil"
+                ContentTemplate="{DataTemplate local:ProfilPage}"
+                Route="Profil"
+                Shell.NavBarIsVisible="False"/>
+        </Tab>
+    </TabBar>
 
 </Shell>
