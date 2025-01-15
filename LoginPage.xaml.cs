@@ -1,3 +1,6 @@
+using CommunityToolkit.Maui.Behaviors;
+using CommunityToolkit.Maui.Core;
+
 namespace PlanMyMeal_Domain;
 
 public partial class LoginPage : ContentPage
@@ -19,15 +22,5 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new ForgoutPage());
     }
-    //private void Btn_PageMode(object sender, EventArgs e)
-    //{
-    //    if (Application.Current.UserAppTheme == AppTheme.Dark)
-    //    {
-    //        Application.Current.UserAppTheme = AppTheme.Light; //LightMode
-    //    }
-    //    else
-    //    {
-    //        Application.Current.UserAppTheme = AppTheme.Dark; // DarkMode
-    //    }
-    //}
+
 }

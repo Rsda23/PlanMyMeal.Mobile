@@ -20,10 +20,7 @@ public partial class ForgoutPage : ContentPage
         Password.IsVisible = true;
         await Task.Delay(500);
     }
-    private async void Btn_Main(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("//Main");
-    }
+
     private async void Btn_Login(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//Login");

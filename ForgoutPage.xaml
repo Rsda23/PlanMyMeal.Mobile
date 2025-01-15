@@ -48,7 +48,7 @@
                         </Grid>
                     </Frame>
 
-                    <Button Clicked="Btn_Main" Text="Confirmer" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                    <Button Clicked="Btn_Login" Text="Confirmer" FontAttributes="Bold" HeightRequest="45" FontSize="18" />
                 </StackLayout>
             </VerticalStackLayout>
         </Frame>

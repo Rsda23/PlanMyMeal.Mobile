@@ -7,8 +7,7 @@
 
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior 
-            StatusBarColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}"
-            StatusBarStyle="{AppThemeBinding Light=DarkContent, Dark=LightContent}" />
+            StatusBarColor="Transparent"/>
     </ContentPage.Behaviors>
     
     <Grid RowDefinitions="1*,8*,1*">
