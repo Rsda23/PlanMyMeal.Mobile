@@ -2,10 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlanMyMeal_Domain.ProfilPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <!--<Grid>
+        
+        <Frame Grid.Row="0" BorderColor="White" VerticalOptions="Start" HeightRequest="160" HasShadow="False" CornerRadius="20" Margin="0,45,0,20" Padding="0" IsClippedToBounds="True">
+            <Image Source="timeline" Aspect="AspectFill"/>
+        </Frame>
+
+        <Label Grid.Column="0" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center">Profil</Label>
+        <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button Grid.Column="0" ImageSource="location" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
+            <Label Grid.Column="1" Text=" Venecy, Italy" FontSize="15" TextColor="#9192b7"/>
+            <Button Grid.Column="2" ImageSource="age" Margin="10,0,0,0" WidthRequest="18" HeightRequest="18" CornerRadius="9" HorizontalOptions="Center" BackgroundColor="#9192b7"/>
+            <Label Grid.Column="3" Text=" Age, 26" FontSize="15" TextColor="#9192b7"/>
+            <Button Grid.Column="4" Text="Regular" TextColor="#e29389" FontAttributes="Bold" Margin="5,0,0,0" CornerRadius="10" FontSize="9" WidthRequest="{OnPlatform iOS='50', Android='59'}" HeightRequest="{OnPlatform iOS='21', Android='30'}" BackgroundColor="#fae6e4"/>
+        </Grid>
+    </Grid>-->
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Grid.Column="0" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Margin="20">Profil</Label>
+            <Image Source="user.png" HorizontalOptions="Center" HeightRequest="100"/>
+        </VerticalStackLayout>
+    </ScrollView>
+    
 </ContentPage>

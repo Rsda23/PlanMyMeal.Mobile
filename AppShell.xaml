@@ -22,6 +22,11 @@
         ContentTemplate="{DataTemplate local:SubscribePage}"
         Route="Subscribe"
         Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Parametre"
+        ContentTemplate="{DataTemplate local:SettingPage}"
+        Route="Setting"
+        Shell.NavBarIsVisible="False"/>
     <TabBar>
         <Tab Title="Accueil" Icon="home.png">
             <ShellContent
