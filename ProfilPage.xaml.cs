@@ -6,4 +6,8 @@ public partial class ProfilPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void Btn_Setting(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//Setting");
+    }
 }
