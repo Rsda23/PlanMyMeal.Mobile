@@ -23,12 +23,26 @@
         Route="Subscribe"
         Shell.NavBarIsVisible="False"/>
     <TabBar>
-        <Tab Title="Home" Icon="home.png">
+        <Tab Title="Accueil" Icon="home.png">
             <ShellContent
                 Title="Accueil"
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="Main"
                 Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Recettes" Icon="recipe.png">
+            <ShellContent
+            Title="Recettes"
+            ContentTemplate="{DataTemplate local:RecipePage}"
+            Route="Recipe"
+            Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Planification" Icon="planning.png">
+            <ShellContent
+            Title="Planification"
+            ContentTemplate="{DataTemplate local:PlanningPage}"
+            Route="Planning"
+            Shell.NavBarIsVisible="False"/>
         </Tab>
         <Tab Title="Profil" Icon="profil.png">
             <ShellContent
