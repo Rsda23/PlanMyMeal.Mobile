@@ -19,13 +19,56 @@
     </Grid>-->
     <ScrollView>
         <VerticalStackLayout>
-            <Label Grid.Column="0" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Margin="20">Profil</Label>
-            <Image x:Name="ProfilImage" Source="user.png" HorizontalOptions="Center" HeightRequest="100">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="ChangeImage"/>
-                </Image.GestureRecognizers>
-            </Image>
-
+            <!--<Grid ColumnDefinitions="*, Auto" Margin="20, 0, 20, 0">
+                <Label Text="Profil" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Picker Title="Thème" SelectedIndexChanged="OnThemeChanged" HorizontalOptions="End">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Clair</x:String>
+                            <x:String>Sombre</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>-->
+            <Grid ColumnDefinitions="*, Auto" Margin="20, 0, 20, 0" VerticalOptions="Center">
+                <Label Text="Profil" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.Column="0" />
+                <Grid Grid.Column="1" Margin="0, 10, 0, 0">
+                    <Label Text="Theme" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center" />
+                    <Switch VerticalOptions="Center" HorizontalOptions="Center" Toggled="OnDarkModeToggled" Margin="0, 5, 0, 0" />
+                </Grid>
+            </Grid>
+            <Frame WidthRequest="100"
+                   HeightRequest="100"
+                   CornerRadius="50"
+                   Padding="0"
+                   Margin="0, 20, 0, 0">
+                <Image x:Name="ProfilImage" Source="user.png" HeightRequest="100" Aspect="AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ChangeImage"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+            <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" Margin="0, 10, 0, 10">Nom Prenom</Label>
+            <Label Grid.Column="0" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Start" Margin="20, 40, 0, 10">Coordonnées</Label>
+            <Frame Margin="20, 0, 20, 20">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">E-mail</Label>
+                    <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">exemple@gmail.com</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="20, 0, 20, 20">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Téléphone</Label>
+                    <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">0601020304</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="20, 0, 20, 20">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Date de naissane</Label>
+                    <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">1 janvier 2000</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Clicked="Btn_Login" Text="Déconnexion"  FontAttributes="Bold" HeightRequest="45" FontSize="18" Margin="20, 0" />
         </VerticalStackLayout>
     </ScrollView>
     
