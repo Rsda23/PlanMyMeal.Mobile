@@ -20,7 +20,12 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label Grid.Column="0" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" Margin="20">Profil</Label>
-            <Image Source="user.png" HorizontalOptions="Center" HeightRequest="100"/>
+            <Image x:Name="ProfilImage" Source="user.png" HorizontalOptions="Center" HeightRequest="100">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ChangeImage"/>
+                </Image.GestureRecognizers>
+            </Image>
+
         </VerticalStackLayout>
     </ScrollView>
     

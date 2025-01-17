@@ -10,4 +10,17 @@ public partial class ProfilPage : ContentPage
     {
         await Shell.Current.GoToAsync("//Setting");
     }
+    public async void ChangeImage(object sender, EventArgs e)
+    {
+        var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+        {
+            Title = "Selectionner une image"
+        });
+
+        if (result != null)
+        {
+            var flux = await result.OpenReadAsync();
+            ProfilImage.Source = ImageSource.FromStream(() => flux);
+        }
+    }
 }
