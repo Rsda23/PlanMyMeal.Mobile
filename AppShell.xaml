@@ -27,6 +27,11 @@
         ContentTemplate="{DataTemplate local:SettingPage}"
         Route="Setting"
         Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="AjouterRecette"
+        ContentTemplate="{DataTemplate local:AddRecipePage}"
+        Route="AddRecipe"
+        Shell.NavBarIsVisible="False"/>
     <TabBar>
         <Tab Title="Accueil" Icon="home.png">
             <ShellContent
