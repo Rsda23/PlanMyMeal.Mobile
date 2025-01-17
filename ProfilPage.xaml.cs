@@ -33,23 +33,4 @@ public partial class ProfilPage : ContentPage
 
         Application.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
     }
-    //private void OnThemeChanged(object sender, EventArgs e)
-    //{
-    //    var picker = (Picker)sender;
-    //    var selectedTheme = picker.SelectedItem.ToString();
-
-    //    // Changer le thème selon le choix
-    //    switch (selectedTheme)
-    //    {
-    //        case "Clair":
-    //            Application.Current.UserAppTheme = AppTheme.Light;
-    //            break;
-    //        case "Sombre":
-    //            Application.Current.UserAppTheme = AppTheme.Dark;
-    //            break;
-    //        default:
-    //            Application.Current.UserAppTheme = AppTheme.Unspecified;
-    //            break;
-    //    }
-    //}
 }
