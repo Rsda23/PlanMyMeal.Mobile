@@ -424,4 +424,9 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource SecondaryDark}}" />
     </Style>
 
+    <!--<Style TargetType="Image">
+        <Setter Property="TintColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="Aspect" Value="AspectFit" />
+    </Style>-->
+
 </ResourceDictionary>
