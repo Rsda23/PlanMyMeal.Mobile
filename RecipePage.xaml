@@ -26,7 +26,7 @@
                 <Frame WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
                     <Image Source="empty.png" Aspect="AspectFill" />
                 </Frame>
-                <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center"/>
+                <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center" TextColor="#333"/>
             </HorizontalStackLayout>
         </Frame>
         <Button HorizontalOptions="End" Margin="20, 5" HeightRequest="45" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
