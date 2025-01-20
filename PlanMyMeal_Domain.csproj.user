@@ -11,6 +11,9 @@
     <MauiXaml Update="AddRecipePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Filter.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ForgoutPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

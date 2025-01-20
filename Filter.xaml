@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PlanMyMeal_Domain.Filter">
+    <Frame>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <VerticalStackLayout.BackgroundColor>
+                <AppThemeBinding Dark="#171926" />
+            </VerticalStackLayout.BackgroundColor>
+            
+            <Label Text="Filtrer par catégorie" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+            <HorizontalStackLayout>
+                <CheckBox x:Name="EntreeCheckbox" />
+                <Label Text="Entrée" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <CheckBox x:Name="PlatCheckbox" />
+                <Label Text="Plat principal" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <CheckBox x:Name="DessertCheckbox" />
+                <Label Text="Dessert" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button Text="Confirmer" Clicked="Apply" />
+                <Button Text="Annuler" Clicked="Cancel" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Frame>
+</toolkit:Popup>

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using CommunityToolkit.Maui.Views;
 
 namespace PlanMyMeal_Domain;
 
@@ -12,10 +13,17 @@ public partial class RecipePage : ContentPage
 	{
 		await Shell.Current.GoToAsync("//AddRecipe");
 	}
+    private async void FilterButton(object sender, EventArgs e)
+    {
+        var result = await this.ShowPopupAsync(new Filter());
 
-	private void OnFilterClicked(Object sender, EventArgs e)
-	{
-        FilterPanel.IsVisible = !FilterPanel.IsVisible;
-
+        if (result != null)
+        {
+            ApplyFilter(result.ToString() ?? "Default");
+        }
+    }
+    private void ApplyFilter(string category)
+    {
+        Console.WriteLine("Filtrage...");
     }
 }

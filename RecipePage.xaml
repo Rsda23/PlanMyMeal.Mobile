@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PlanMyMeal_Domain.RecipePage"
              Title="RecipePage">
     <VerticalStackLayout>
@@ -9,25 +10,7 @@
 
             <VerticalStackLayout>
                 <SearchBar Margin="0,10, 20, 0" Placeholder="Rechercher une recette" BackgroundColor="Transparent" VerticalOptions="Center" />
-                <HorizontalStackLayout>
-                    <Button Margin="20" HorizontalOptions="End" HeightRequest="40" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
-                    <ImageButton Source="filter.png" HorizontalOptions="Start" HeightRequest="30" WidthRequest="30" Clicked="OnFilterClicked" />
-                    <ContentView x:Name="FilterPanel" IsVisible="False" BackgroundColor="#FFFFFF" Margin="10">
-                        <VerticalStackLayout Padding="20">
-                            <Label Text="Filtres" FontAttributes="Bold" FontSize="20" />
-                            <Picker Title="Catégorie">
-                                <Picker.ItemsSource>
-                                    <x:Array Type="{x:Type x:String}">
-                                        <x:String>Entrée</x:String>
-                                        <x:String>Plat</x:String>
-                                        <x:String>Dessert</x:String>
-                                    </x:Array>
-                                </Picker.ItemsSource>
-                            </Picker>
-                            <Button Text="Appliquer" />
-                        </VerticalStackLayout>
-                    </ContentView>
-                </HorizontalStackLayout>
+                <Button Text="Filtrer" Clicked="FilterButton" WidthRequest="100" Margin="20, 10 ,0, 10" HorizontalOptions="Start" />
             </VerticalStackLayout>
         </Grid>
         <Frame BackgroundColor="#F5F5F5" CornerRadius="10" Padding="10" Margin="20, 5">
@@ -46,5 +29,6 @@
                 <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Frame>
+        <Button HorizontalOptions="End" Margin="20, 5" HeightRequest="45" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
     </VerticalStackLayout>
 </ContentPage>
