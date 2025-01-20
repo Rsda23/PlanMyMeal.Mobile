@@ -8,7 +8,7 @@ public partial class RecipePage : ContentPage
 	{
 		InitializeComponent();
 	}
-    private async void AddRecipe(object sender, TappedEventArgs e)
+    private async void AddRecipe(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync("//AddRecipe");
 	}
