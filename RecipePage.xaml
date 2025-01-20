@@ -24,7 +24,7 @@
                                     </x:Array>
                                 </Picker.ItemsSource>
                             </Picker>
-                            <Button Text="Appliquer" Clicked="null" />
+                            <Button Text="Appliquer" />
                         </VerticalStackLayout>
                     </ContentView>
                 </HorizontalStackLayout>
