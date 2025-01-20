@@ -9,24 +9,26 @@
         <Grid ColumnDefinitions="*,Auto">
 
             <VerticalStackLayout>
-                <SearchBar Margin="0,10, 20, 0" Placeholder="Rechercher une recette" BackgroundColor="Transparent" VerticalOptions="Center" />
+                <Frame Margin="20, 0, 20, 10" Padding="0" CornerRadius="20" HasShadow="True"  BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
+                    <SearchBar Margin="10,0,10,0" Placeholder="Rechercher une recette"/>
+                </Frame>
                 <Button Text="Filtrer" Clicked="FilterButton" WidthRequest="100" Margin="20, 10 ,0, 10" HorizontalOptions="Start" />
             </VerticalStackLayout>
         </Grid>
-        <Frame BackgroundColor="#F5F5F5" CornerRadius="10" Padding="10" Margin="20, 5">
+        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}" CornerRadius="10" Padding="10" Margin="20, 5">
             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                 <Frame WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
                     <Image Source="empty.png" Aspect="AspectFill" />
                 </Frame>
-                <Label Text="Nom de la recette 1" FontSize="16" VerticalOptions="Center" TextColor="#333" />
+                <Label Text="Nom de la recette 1" FontSize="16" VerticalOptions="Center" />
             </HorizontalStackLayout>
         </Frame>
-        <Frame BackgroundColor="#F5F5F5" CornerRadius="10" Padding="10" Margin="20, 5">
+        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}" CornerRadius="10" Padding="10" Margin="20, 5">
             <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
                 <Frame WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
                     <Image Source="empty.png" Aspect="AspectFill" />
                 </Frame>
-                <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center" TextColor="#333"/>
+                <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Frame>
         <Button HorizontalOptions="End" Margin="20, 5" HeightRequest="45" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
