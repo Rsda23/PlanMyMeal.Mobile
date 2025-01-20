@@ -24,19 +24,19 @@
             </Frame>
             <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" Margin="0, 10, 0, 10">Nom Prenom</Label>
             <Label Grid.Column="0" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Start" Margin="20, 40, 0, 10">Coordonnées</Label>
-            <Frame Margin="20, 0, 20, 20">
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
                 <VerticalStackLayout>
                     <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">E-mail</Label>
                     <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">exemple@gmail.com</Label>
                 </VerticalStackLayout>
             </Frame>
-            <Frame Margin="20, 0, 20, 20">
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
                 <VerticalStackLayout>
                     <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Téléphone</Label>
                     <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">0601020304</Label>
                 </VerticalStackLayout>
             </Frame>
-            <Frame Margin="20, 0, 20, 20">
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
                 <VerticalStackLayout>
                     <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Date de naissane</Label>
                     <Label FontSize="18" HorizontalTextAlignment="Start" Margin="0">1 janvier 2000</Label>
