@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PlanMyMeal_Domain.PlanningPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="PlanMyMeal_Domain.PlanningPage"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar">
+    <calendar:SfCalendar  x:Name="calendar" 
+                        View="Month" BackgroundColor="{AppThemeBinding Light=#D9DBE8, Dark=#A2ADC3}">
+    </calendar:SfCalendar>
 </ContentPage>
