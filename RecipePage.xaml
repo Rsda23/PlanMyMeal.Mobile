@@ -32,5 +32,12 @@
             </HorizontalStackLayout>
         </Frame>
         <Button HorizontalOptions="End" Margin="20, 5" HeightRequest="45" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
+        <ListView x:Name="RecipeListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding UserId}" Detail="{Binding Jwt}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </VerticalStackLayout>
 </ContentPage>
