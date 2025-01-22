@@ -9,6 +9,8 @@ namespace PlanMyMeal_Domain
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+            builder.Services.AddSingleton<MongoDbService>();
+            builder.Services.AddTransient<RecipePage>();
             builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()
