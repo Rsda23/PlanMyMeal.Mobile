@@ -1,3 +1,5 @@
+using BCrypt;
+
 namespace PlanMyMeal_Domain;
 
 public partial class SubscribePage : ContentPage
@@ -19,5 +21,11 @@ public partial class SubscribePage : ContentPage
     private async void Btn_Login(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//Login");
+    }
+
+    public void RegisterButton(object sender, EventArgs e)
+    {
+        string inputLogin = LoginEntry.Text;
+
     }
 }
