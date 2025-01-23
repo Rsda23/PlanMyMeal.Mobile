@@ -1,6 +1,3 @@
-using CommunityToolkit.Maui.Behaviors;
-using CommunityToolkit.Maui.Core;
-
 namespace PlanMyMeal_Domain;
 
 public partial class LoginPage : ContentPage
@@ -15,7 +12,7 @@ public partial class LoginPage : ContentPage
     }
     private async void Btn_Subscribe(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new SubscribePage());
+        await Shell.Current.GoToAsync("//Subscribe");
     }
 
     private async void Btn_Forgout(object sender, EventArgs e)
