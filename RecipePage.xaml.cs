@@ -15,7 +15,7 @@ public partial class RecipePage : ContentPage
     }
     private void LoadData()
     {
-        var collection = _mongoService.GetCollection<Model>("sessions");
+        var collection = _mongoService.GetCollection<User>("users");
         var data = collection.Find(_ => true).ToList();
 
         Console.WriteLine($"Nombre d'éléments récupérés : {data.Count}");
