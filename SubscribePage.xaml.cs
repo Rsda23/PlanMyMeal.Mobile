@@ -130,7 +130,6 @@ public partial class SubscribePage : ContentPage
     }
     public bool ConfirmedPassword(string password)
     {
-
         if (password.Count() >= 8 && password.Count() <= 20)
         {
             return true;
@@ -146,6 +145,11 @@ public partial class SubscribePage : ContentPage
     }
     public bool ConfirmedPseudo(string pseudo)
     {
+        if (string.IsNullOrWhiteSpace(pseudo))
+        {
+            throw new Exception("Tous les champs doivent être remplis.");
+        }
+
         if (pseudo.Count() >= 3 && pseudo.Count() <= 20)
         {
             return true;
@@ -162,6 +166,11 @@ public partial class SubscribePage : ContentPage
     public bool ConfirmedEmail(string email)
     {
         string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            throw new Exception("Tous les champs doivent être remplis.");
+        }
 
         if (Regex.IsMatch(email, emailPattern))
         {

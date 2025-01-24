@@ -12,6 +12,7 @@ namespace PlanMyMeal_Domain
             builder.Services.AddSingleton<MongoDbService>();
             builder.Services.AddTransient<RecipePage>();
             builder.Services.AddTransient<SubscribePage>();
+            builder.Services.AddTransient<LoginPage>();
             builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()

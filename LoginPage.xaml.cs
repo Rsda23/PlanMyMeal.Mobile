@@ -1,12 +1,31 @@
+using Microsoft.Maui.ApplicationModel.Communication;
+using MongoDB.Driver;
+
 namespace PlanMyMeal_Domain;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+    private readonly MongoDbService _mongoDbService;
+    public LoginPage(MongoDbService mongoDbService)
 	{
 		InitializeComponent();
-	}
+        _mongoDbService = mongoDbService;
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        EmailEntry.Text = string.Empty;
+        PasswordEntry.Text = string.Empty;
+
+        ErrorLogin.IsVisible = false;
+
+    }
     private async void Btn_Main(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//Main");
+    }
+    private async void Go_Main()
     {
         await Shell.Current.GoToAsync("//Main");
     }
@@ -19,5 +38,43 @@ public partial class LoginPage : ContentPage
     {
         await Navigation.PushAsync(new ForgoutPage());
     }
+    private void ValidLogin(object sender, EventArgs e)
+    {
+        try
+        {
+            string inputEmail = EmailEntry.Text;
+            string inputPassword = PasswordEntry.Text;
 
+            var collection = _mongoDbService.GetCollection<User>("users");
+            var user = collection.Find(user => user.Email == inputEmail).FirstOrDefault();
+
+            if (string.IsNullOrWhiteSpace(inputEmail) || string.IsNullOrWhiteSpace(inputPassword))
+            {
+                throw new Exception("Tous les champs doivent être remplis.");
+            }
+
+            if (user == null)
+            {
+                ErrorLogin.Text = "Email ou mot de passe incorrect.";
+                ErrorLogin.IsVisible = true;
+                return;
+            }
+
+            bool password = PasswordHashing.ConfirmPassword(inputPassword, user.HashedPassword);
+
+            if (!password)
+            {
+                ErrorLogin.Text = "Email ou mot de passe incorrect.";
+                ErrorLogin.IsVisible = true;
+                return;
+            }
+
+            Go_Main();
+        }
+        catch (Exception ex)
+        {
+            ErrorLogin.Text = ex.Message;
+            ErrorLogin.IsVisible = true;
+        }
+    }
 }

@@ -23,19 +23,19 @@
 
                 <Label Text="Connexion" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
 
-                <Frame Padding="10" >
+                <Frame Padding="10">
                     <Grid ColumnDefinitions="5,*">
-                        <Entry VerticalOptions="Center" Placeholder="Email" FontSize="11" Grid.Column="1"/>
+                        <Entry x:Name="EmailEntry" VerticalOptions="Center" Placeholder="Email" FontSize="11" Grid.Column="1"/>
                     </Grid>
                 </Frame>
 
                 <Frame Padding="10">
                     <Grid ColumnDefinitions="5,*">
-                        <Entry VerticalOptions="Center" Placeholder="Mot de passe" IsPassword="True" FontSize="11" Grid.Column="1"/>
+                        <Entry x:Name="PasswordEntry" VerticalOptions="Center" Placeholder="Mot de passe" IsPassword="True" FontSize="11" Grid.Column="1"/>
                     </Grid>
                 </Frame>
-
-                <Button Clicked="Btn_Main" Text="Se connecter"  FontAttributes="Bold" HeightRequest="45" FontSize="18" />
+                <Label x:Name="ErrorLogin" TextColor="Red" FontSize="14" IsVisible="False" Margin="0, 0, 0, 5" HorizontalTextAlignment="Center" />
+                <Button Clicked="ValidLogin" Text="Se connecter"  FontAttributes="Bold" HeightRequest="45" FontSize="18"/>
 
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Label Text="Mot de passe oublié ?" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center">
