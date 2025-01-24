@@ -1,3 +1,4 @@
+using MongoDB.Driver;
 using System.Text.RegularExpressions;
 
 namespace PlanMyMeal_Domain;
@@ -164,11 +165,23 @@ public partial class SubscribePage : ContentPage
 
         if (Regex.IsMatch(email, emailPattern))
         {
-            return true;
+            if (VerifyEmail(email))
+            {
+                return true;
+            }
+            else
+            {
+                throw new Exception("Cette adresse email est déjà utilisée.");
+            }
         }
         else
         {
             throw new Exception("L'adresse email n'est pas valide.");
         }
+    }
+    public bool VerifyEmail(string email)
+    {
+        var collection = _mongoDbService.GetCollection<User>("users");
+        return !collection.Find(user => user.Email == email).Any();
     }
 }
