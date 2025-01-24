@@ -88,13 +88,14 @@ public partial class SubscribePage : ContentPage
             {
                 string inputPseudo = PseudoEntry.Text;
                 string inputEmail = EmailEntry.Text;
-                string inputPassword = FirstPasswordEntry.Text;
+                string hashedPassword = PasswordHashing.HashPassword(FirstPasswordEntry.Text);
+                
 
                 var newUser = new User
                 {
                     Pseudo = inputPseudo,
                     Email = inputEmail,
-                    HashedPassword = inputPassword
+                    HashedPassword = hashedPassword
                 };
 
                 var collection = _mongoDbService.GetCollection<User>("users");
