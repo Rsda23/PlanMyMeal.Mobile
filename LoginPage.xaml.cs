@@ -6,6 +6,7 @@ namespace PlanMyMeal_Domain;
 public partial class LoginPage : ContentPage
 {
     private readonly MongoDbService _mongoDbService;
+    private bool _isPasswordVisible = false;
     public LoginPage(MongoDbService mongoDbService)
 	{
 		InitializeComponent();
@@ -75,6 +76,21 @@ public partial class LoginPage : ContentPage
         {
             ErrorLogin.Text = ex.Message;
             ErrorLogin.IsVisible = true;
+        }
+    }
+    private void PasswordVisibility(object sender, EventArgs e)
+    {
+        _isPasswordVisible = !_isPasswordVisible;
+        PasswordEntry.IsPassword = !_isPasswordVisible;
+        if (_isPasswordVisible)
+        {
+            EyeYes.IsVisible = false;
+            EyeNo.IsVisible = true;
+        }
+        else
+        {
+            EyeYes.IsVisible = true;
+            EyeNo.IsVisible = false;
         }
     }
 }
