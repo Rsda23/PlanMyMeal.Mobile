@@ -1,10 +1,14 @@
+using MongoDB.Driver;
+
 namespace PlanMyMeal_Domain;
 
 public partial class ProfilPage : ContentPage
 {
-	public ProfilPage()
+    private MongoDbService _mongoDbService;
+	public ProfilPage(MongoDbService mongoDbService)
 	{
 		InitializeComponent();
+        _mongoDbService = mongoDbService;
 	}
     private async void Btn_Setting(object sender, EventArgs e)
     {
@@ -33,4 +37,12 @@ public partial class ProfilPage : ContentPage
 
         Application.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
     }
+    //private void RecoverText(object sender, EventArgs e)
+    //{
+
+    //    string emailConnected = 
+    //    var collection = _mongoDbService.GetCollection<User>("users");
+    //    var user = collection.Find(user => user.Email == email);
+    //}
+    
 }

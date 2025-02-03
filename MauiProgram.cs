@@ -13,6 +13,7 @@ namespace PlanMyMeal_Domain
             builder.Services.AddTransient<RecipePage>();
             builder.Services.AddTransient<SubscribePage>();
             builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<ProfilPage>();
             builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()

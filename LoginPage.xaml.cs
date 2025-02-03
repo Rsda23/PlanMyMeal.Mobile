@@ -45,6 +45,7 @@ public partial class LoginPage : ContentPage
         {
             string inputEmail = EmailEntry.Text;
             string inputPassword = PasswordEntry.Text;
+            string emailConnected = inputEmail;
 
             var collection = _mongoDbService.GetCollection<User>("users");
             var user = collection.Find(user => user.Email == inputEmail).FirstOrDefault();
