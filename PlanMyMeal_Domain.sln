@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanMyMeal_Domain", "PlanMyMeal_Domain.csproj", "{7E508E50-435C-40DF-88BF-5F578594295C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanMyMeal.Mobile", "PlanMyMeal.Mobile.csproj", "{7E508E50-435C-40DF-88BF-5F578594295C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{1874F2D8-5A25-4729-AB4B-83A9611E25A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{980DBDB4-29E9-4DB7-AEC3-B20CA07B6E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanMyMeal.Infrastructure", "..\PlanMyMeal.Infrastructure\PlanMyMeal.Infrastructure.csproj", "{3D6E6504-654A-4B77-B861-6DCFA44EB630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanMyMeal.Domain", "..\PlanMyMeal.Domain\PlanMyMeal.Domain.csproj", "{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +25,23 @@ Global
 		{7E508E50-435C-40DF-88BF-5F578594295C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E508E50-435C-40DF-88BF-5F578594295C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E508E50-435C-40DF-88BF-5F578594295C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3D6E6504-654A-4B77-B861-6DCFA44EB630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6E6504-654A-4B77-B861-6DCFA44EB630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6E6504-654A-4B77-B861-6DCFA44EB630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6E6504-654A-4B77-B861-6DCFA44EB630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D6E6504-654A-4B77-B861-6DCFA44EB630} = {980DBDB4-29E9-4DB7-AEC3-B20CA07B6E19}
+		{A9FC49F3-9D5F-4865-8DA3-8B1309CD3A32} = {1874F2D8-5A25-4729-AB4B-83A9611E25A3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98849EFD-8A4A-4F17-B5D1-7765D2134A31}
 	EndGlobalSection
 EndGlobal
