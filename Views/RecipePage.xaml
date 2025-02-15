@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="PlanMyMeal_Domain.RecipePage"
+             x:Class="PlanMyMeal.Mobile.RecipePage"
              Title="RecipePage">
     <VerticalStackLayout>
         <Label Text="Recettes" FontAttributes="Bold" FontSize="24" HorizontalTextAlignment="Center" Margin="0,30,0,10" />

@@ -1,8 +1,10 @@
 using MongoDB.Driver;
 using PlanMyMeal.Infrastructure;
+using PlanMyMeal.Infrastructure.Models;
+using PlanMyMeal.Mobile.Extensions;
 using System.Text.RegularExpressions;
 
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
 public partial class SubscribePage : ContentPage
 {
@@ -27,11 +29,11 @@ public partial class SubscribePage : ContentPage
     }
     private async void Btn_Main(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Main");
+        await Shell.Current.GoToAsync($"//{Routes.MainPage}");
     }
     private async void Go_Main()
     {
-        await Shell.Current.GoToAsync("//Main");
+        await Shell.Current.GoToAsync($"//{Routes.MainPage}");
     }
     private async void Email_Next(object sender, EventArgs e)
     {
@@ -77,7 +79,7 @@ public partial class SubscribePage : ContentPage
     }
     private async void Btn_Login(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Login");
+        await Shell.Current.GoToAsync($"//{Routes.LoginPage}");
     }
 
     public void Btn_Register(object sender, EventArgs e)
@@ -90,7 +92,7 @@ public partial class SubscribePage : ContentPage
             {
                 string inputPseudo = PseudoEntry.Text;
                 string inputEmail = EmailEntry.Text;
-                string hashedPassword = PasswordHashing.HashPassword(FirstPasswordEntry.Text);
+                string hashedPassword = FirstPasswordEntry.Text.HashPassword();
                 
 
                 var newUser = new User

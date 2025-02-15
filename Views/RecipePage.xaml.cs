@@ -1,8 +1,9 @@
 using CommunityToolkit.Maui.Views;
 using MongoDB.Driver;
 using PlanMyMeal.Infrastructure;
+using PlanMyMeal.Infrastructure.Models;
 
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
 public partial class RecipePage : ContentPage
 {
@@ -24,11 +25,11 @@ public partial class RecipePage : ContentPage
     }
     private async void AddRecipe(object sender, EventArgs e)
 	{
-		await Shell.Current.GoToAsync("//AddRecipe");
+		await Shell.Current.GoToAsync($"//{Routes.AddRecipePage}");
 	}
     private async void FilterButton(object sender, EventArgs e)
     {
-        var result = await this.ShowPopupAsync(new Filter());
+        var result = await this.ShowPopupAsync(new ChooseMealPopup());
 
         if (result != null)
         {

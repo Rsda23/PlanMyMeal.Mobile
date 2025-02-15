@@ -1,19 +1,23 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using PlanMyMeal.Mobile.Extensions;
 using Syncfusion.Maui.Core.Hosting;
+using epj.RouteGenerator;
 
-namespace PlanMyMeal_Domain
+namespace PlanMyMeal.Mobile
 {
+    [AutoRoutes("Page")]
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder.Services.AddSingleton<MongoDbService>();
-            builder.Services.AddTransient<RecipePage>();
-            builder.Services.AddTransient<SubscribePage>();
-            builder.Services.AddTransient<LoginPage>();
-            builder.Services.AddTransient<ProfilPage>();
+            
+            builder.Services.AddPlanMyMealViews();
+            builder.Services.AddPlanMyMealViewModels();
+
+            builder.Services.AddInfrastructure();
+
             builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()

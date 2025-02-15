@@ -1,4 +1,4 @@
-﻿namespace PlanMyMeal_Domain
+﻿namespace PlanMyMeal.Mobile
 {
     public partial class MainPage : ContentPage
     {
@@ -9,7 +9,7 @@
 
         private async void Btn_Login(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//Login");
+            await Shell.Current.GoToAsync($"//{Routes.LoginPage}");
         }
 
         private void Label_Focused(object sender, FocusEventArgs e)

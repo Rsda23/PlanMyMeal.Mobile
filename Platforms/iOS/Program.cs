@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace PlanMyMeal_Domain
+namespace PlanMyMeal.Mobile
 {
     public class Program
     {

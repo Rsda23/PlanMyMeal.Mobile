@@ -1,58 +1,46 @@
-using Microsoft.Maui.ApplicationModel.Communication;
 using MongoDB.Driver;
 using PlanMyMeal.Infrastructure;
+using PlanMyMeal.Infrastructure.Models;
+using PlanMyMeal.Mobile.Extensions;
+using PlanMyMeal.Mobile.ViewModels;
 
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
 public partial class LoginPage : ContentPage
 {
     private readonly MongoDbService _mongoDbService;
     private bool _isPasswordVisible = false;
-    public LoginPage(MongoDbService mongoDbService)
+    private LoginViewModel _loginViewModel;
+    public LoginPage(MongoDbService mongoDbService, LoginViewModel model)
 	{
 		InitializeComponent();
         _mongoDbService = mongoDbService;
+        _loginViewModel = model;
+        BindingContext = _loginViewModel;
     }
     protected override void OnAppearing()
     {
         base.OnAppearing();
 
-        EmailEntry.Text = string.Empty;
-        PasswordEntry.Text = string.Empty;
-
+        //EmailEntry.Text = string.Empty;
         ErrorLogin.IsVisible = false;
 
     }
-    private async void Btn_Main(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("//Main");
-    }
-    private async void Go_Main()
-    {
-        await Shell.Current.GoToAsync("//Main");
-    }
-    private async void Btn_Subscribe(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("//Subscribe");
-    }
+    
 
-    private async void Btn_Forgout(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new ForgoutPage());
-    }
-    private void ValidLogin(object sender, EventArgs e)
+    private async void ValidLogin(object sender, EventArgs e)
     {
         try
         {
-            string inputEmail = EmailEntry.Text;
-            string inputPassword = PasswordEntry.Text;
-            string emailConnected = inputEmail;
+            //string inputEmail = EmailEntry.Text;
+            //string inputPassword = PasswordEntry.Text;
+            //string emailConnected = inputEmail;
             //string token = AssignToken();
 
             var collection = _mongoDbService.GetCollection<User>("users");
-            var user = collection.Find(user => user.Email == inputEmail).FirstOrDefault();
+            var user = collection.Find(user => user.Email == _loginViewModel.Email).FirstOrDefault();
 
-            if (string.IsNullOrWhiteSpace(inputEmail) || string.IsNullOrWhiteSpace(inputPassword))
+            if (string.IsNullOrWhiteSpace(_loginViewModel.Email) || string.IsNullOrWhiteSpace(_loginViewModel.Password))
             {
                 throw new Exception("Tous les champs doivent être remplis.");
             }
@@ -64,7 +52,7 @@ public partial class LoginPage : ContentPage
                 return;
             }
 
-            bool password = PasswordHashing.ConfirmPassword(inputPassword, user.HashedPassword);
+            bool password = _loginViewModel.Password.ConfirmPassword(user.HashedPassword);
 
             if (!password)
             {
@@ -73,7 +61,7 @@ public partial class LoginPage : ContentPage
                 return;
             }
 
-            Go_Main();
+            await Shell.Current.GoToAsync($"//{Routes.MainPage}");
         }
         catch (Exception ex)
         {

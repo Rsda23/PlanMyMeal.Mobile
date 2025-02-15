@@ -1,4 +1,4 @@
-﻿namespace PlanMyMeal_Domain
+﻿namespace PlanMyMeal.Mobile
 {
     public partial class AppShell : Shell
     {

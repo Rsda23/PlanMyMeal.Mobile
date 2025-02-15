@@ -1,10 +1,10 @@
 using CommunityToolkit.Maui.Views;
 
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
-public partial class Filter : Popup
+public partial class ChooseMealPopup : Popup
 {
-	public Filter()
+	public ChooseMealPopup()
 	{
 		InitializeComponent();
 	}

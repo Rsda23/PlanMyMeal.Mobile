@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:Class="PlanMyMeal_Domain.LoginPage">
+             xmlns:viewmodels="clr-namespace:PlanMyMeal.Mobile.ViewModels"
+             x:Class="PlanMyMeal.Mobile.LoginPage"
+             x:DataType="viewmodels:LoginViewModel">
 
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior 
@@ -25,13 +27,23 @@
 
                 <Frame Padding="10, 10, 30, 10">
                     <Grid ColumnDefinitions="5,*">
-                        <Entry x:Name="EmailEntry" Text="{Binding Email}"  VerticalOptions="Center" Placeholder="Email" FontSize="11" Grid.Column="1"/>
+                        <Entry Text="{Binding Email}" 
+                               VerticalOptions="Center" 
+                               Placeholder="Email" 
+                               FontSize="11" 
+                               Grid.Column="1"/>
                     </Grid>
                 </Frame>
 
                 <Frame Padding="10">
                     <Grid ColumnDefinitions="*,Auto">
-                        <Entry x:Name="PasswordEntry" VerticalOptions="Start" Placeholder="Mot de passe" IsPassword="True" FontSize="11" Grid.Column="0"/>
+                        <Entry x:Name="PasswordEntry"
+                               Text="{Binding Password}"
+                               VerticalOptions="Start" 
+                               Placeholder="Mot de passe" 
+                               IsPassword="True" 
+                               FontSize="11" 
+                               Grid.Column="0"/>
                         <ImageButton x:Name="EyeYes" IsVisible="True" Source="eye_line.png" HeightRequest="40" WidthRequest="20" VerticalOptions="End" Clicked="PasswordVisibility" Grid.Column="1"/>
                         <ImageButton x:Name="EyeNo" IsVisible="False" Source="eye.png" HeightRequest="40" WidthRequest="20" VerticalOptions="End" Clicked="PasswordVisibility" Grid.Column="1"/>
                     </Grid>
@@ -42,7 +54,7 @@
                 <HorizontalStackLayout HorizontalOptions="Center">
                     <Label Text="Mot de passe oublié ?" FontSize="12" FontAttributes="Bold" HorizontalTextAlignment="Center">
                     <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_Forgout" />
+                            <TapGestureRecognizer Command="{Binding ForgetPasswordCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </HorizontalStackLayout>
@@ -50,7 +62,7 @@
                     <Label Text="Vous n'avez pas de compte ?" FontSize="12" VerticalTextAlignment="Center"/>
                     <Label Text="Inscrivez-vous" FontAttributes="Bold" FontSize="13" Margin="10, 0, 0, 0">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_Subscribe" />
+                            <TapGestureRecognizer Command="{Binding SubscribeCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </HorizontalStackLayout>

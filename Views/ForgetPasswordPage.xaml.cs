@@ -1,8 +1,8 @@
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
-public partial class ForgoutPage : ContentPage
+public partial class ForgetPasswordPage : ContentPage
 {
-	public ForgoutPage()
+	public ForgetPasswordPage()
 	{
 		InitializeComponent();
 	}
@@ -23,6 +23,6 @@ public partial class ForgoutPage : ContentPage
 
     private async void Btn_Login(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Login");
+        await Shell.Current.GoToAsync($"//{Routes.LoginPage}");
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace PlanMyMeal_Domain
+namespace PlanMyMeal.Mobile
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

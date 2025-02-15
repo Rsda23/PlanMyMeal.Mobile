@@ -1,6 +1,6 @@
 using PlanMyMeal.Infrastructure;
 
-namespace PlanMyMeal_Domain;
+namespace PlanMyMeal.Mobile;
 
 public partial class ProfilPage : ContentPage
 {
@@ -12,11 +12,11 @@ public partial class ProfilPage : ContentPage
 	}
     private async void Btn_Setting(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Setting");
+        await Shell.Current.GoToAsync($"//{Routes.SettingPage}");
     }
     private async void Btn_Login(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//Login");
+        await Shell.Current.GoToAsync($"//{Routes.LoginPage}");
     }
     public async void ChangeImage(object sender, EventArgs e)
     {
