@@ -1,5 +1,6 @@
 using Microsoft.Maui.ApplicationModel.Communication;
 using MongoDB.Driver;
+using PlanMyMeal.Infrastructure;
 
 namespace PlanMyMeal_Domain;
 
@@ -46,6 +47,7 @@ public partial class LoginPage : ContentPage
             string inputEmail = EmailEntry.Text;
             string inputPassword = PasswordEntry.Text;
             string emailConnected = inputEmail;
+            //string token = AssignToken();
 
             var collection = _mongoDbService.GetCollection<User>("users");
             var user = collection.Find(user => user.Email == inputEmail).FirstOrDefault();
@@ -94,4 +96,8 @@ public partial class LoginPage : ContentPage
             EyeNo.IsVisible = false;
         }
     }
+    //private string AssignToken()
+    //{
+    //    string token = new
+    //}
 }
