@@ -1,4 +1,4 @@
-using MongoDB.Driver;
+using PlanMyMeal.Infrastructure;
 
 namespace PlanMyMeal_Domain;
 
@@ -35,7 +35,10 @@ public partial class ProfilPage : ContentPage
     {
         bool isDarkMode = e.Value;
 
-        Application.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
+        if (Application.Current != null)
+        {
+            Application.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
+        }
     }
     //private void RecoverText(object sender, EventArgs e)
     //{
