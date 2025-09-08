@@ -1,6 +1,7 @@
 ﻿using PlanMyMeal.Domain.Models;
 using PlanMyMeal_Domain.Interfaces;
 using System.Diagnostics;
+using System.Text;
 using System.Text.Json;
 
 namespace PlanMyMeal_Domain.Services
@@ -37,5 +38,27 @@ namespace PlanMyMeal_Domain.Services
                 return null;
             }
         }
+
+        public async Task<bool> PostUser(User user)
+        {
+            try
+            {
+                var uri = $"Users/PostUser";
+
+                var jsonContent = JsonSerializer.Serialize(user);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync(uri, content);
+                var data = await response.Content.ReadAsStringAsync();
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return false;
+            }
+        }
+
     }
 }
