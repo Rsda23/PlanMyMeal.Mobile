@@ -1,17 +1,17 @@
-using Microsoft.Maui.ApplicationModel.Communication;
 using MongoDB.Driver;
-using PlanMyMeal.Infrastructure;
+using PlanMyMeal_Domain.ViewModels;
 
 namespace PlanMyMeal_Domain;
 
 public partial class LoginPage : ContentPage
 {
-    private readonly MongoDbService _mongoDbService;
     private bool _isPasswordVisible = false;
-    public LoginPage(MongoDbService mongoDbService)
+    private readonly LoginViewModel _loginViewModel;
+    public LoginPage(LoginViewModel model)
 	{
 		InitializeComponent();
-        _mongoDbService = mongoDbService;
+        _loginViewModel = model;
+        BindingContext = _loginViewModel;
     }
     protected override void OnAppearing()
     {
@@ -47,7 +47,6 @@ public partial class LoginPage : ContentPage
             string inputEmail = EmailEntry.Text;
             string inputPassword = PasswordEntry.Text;
             string emailConnected = inputEmail;
-            //string token = AssignToken();
 
             var collection = _mongoDbService.GetCollection<User>("users");
             var user = collection.Find(user => user.Email == inputEmail).FirstOrDefault();
@@ -96,8 +95,4 @@ public partial class LoginPage : ContentPage
             EyeNo.IsVisible = false;
         }
     }
-    //private string AssignToken()
-    //{
-    //    string token = new
-    //}
 }
