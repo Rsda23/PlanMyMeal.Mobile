@@ -20,6 +20,10 @@ namespace PlanMyMeal_Domain.ViewModels
             {
                 await Shell.Current.GoToAsync("//Main");
             }
+            else if (destination == "login")
+            {
+                await Shell.Current.GoToAsync("//Login");
+            }
             else if (destination == "subscribe")
             {
                 await Shell.Current.GoToAsync("//Subscribe");
