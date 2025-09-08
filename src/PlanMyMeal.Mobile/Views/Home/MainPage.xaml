@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanMyMeal_Domain.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="plan.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                Margin="0, 20"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Button
+                Text="Transfert sur LoginPage"
+                Clicked="Btn_Login"/>
+            <Label
+                Text="Test 1" 
+                VerticalOptions="Center"
+                FontSize="40" FontAttributes="Bold"/>
+            <Label
+                Text="Test 2" 
+                VerticalOptions="Center"
+                FontSize="20" FontAttributes="Bold"/>
+        </VerticalStackLayout>
+        
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlanMyMeal_Domain.ProfilPage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*, Auto" Margin="20, 0, 20, 0" VerticalOptions="Center">
+                <Label Text="Profil" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.Column="0" />
+                <Grid Grid.Column="1" Margin="0, 10, 0, 0">
+                    <Label Text="Theme" FontAttributes="Bold" FontSize="14" HorizontalTextAlignment="Center" />
+                    <Switch VerticalOptions="Center" HorizontalOptions="Center" Toggled="OnDarkModeToggled" Margin="0, 5, 0, 0" />
+                </Grid>
+            </Grid>
+            <Frame WidthRequest="100"
+                   HeightRequest="100"
+                   CornerRadius="50"
+                   Padding="0"
+                   Margin="0, 20, 0, 0">
+                <Image x:Name="ProfilImage" Source="user.png" HeightRequest="100" Aspect="AspectFill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ChangeImage"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+            <Label Grid.Column="0" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" Margin="0, 10, 0, 10">Nom Prenom</Label>
+            <Label Grid.Column="0" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Start" Margin="20, 40, 0, 10">Coordonnées</Label>
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">E-mail</Label>
+                    <Label x:Name="Email" FontSize="18" HorizontalTextAlignment="Start" Margin="0">exemple@gmail.com</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Téléphone</Label>
+                    <Label x:Name="Phone" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Vide</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="20, 0, 20, 20" BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
+                <VerticalStackLayout>
+                    <Label FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Date de naissane</Label>
+                    <Label x:Name="Birthday" FontSize="18" HorizontalTextAlignment="Start" Margin="0">Vide</Label>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Clicked="Btn_Login" Text="Déconnexion"  FontAttributes="Bold" HeightRequest="45" FontSize="18" Margin="20, 0" />
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

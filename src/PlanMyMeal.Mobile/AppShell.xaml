@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PlanMyMeal_Domain.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PlanMyMeal_Domain"
+    Shell.FlyoutBehavior="Disabled"
+    Title="PlanMyMeal_Domain">
+
+    <ShellContent
+        Title="Connexion"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="Login"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Recuperation"
+        ContentTemplate="{DataTemplate local:ForgoutPage}"
+        Route="Forgout"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Inscription"
+        ContentTemplate="{DataTemplate local:SubscribePage}"
+        Route="Subscribe"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="Parametre"
+        ContentTemplate="{DataTemplate local:SettingPage}"
+        Route="Setting"
+        Shell.NavBarIsVisible="False"/>
+    <ShellContent
+        Title="AjouterRecette"
+        ContentTemplate="{DataTemplate local:AddRecipePage}"
+        Route="AddRecipe"
+        Shell.NavBarIsVisible="False"/>
+    <TabBar>
+        <Tab Title="Accueil" Icon="home.png">
+            <ShellContent
+                Title="Accueil"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="Main"
+                Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Recettes" Icon="recipe.png">
+            <ShellContent
+            Title="Recettes"
+            ContentTemplate="{DataTemplate local:RecipePage}"
+            Route="Recipe"
+            Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Planification" Icon="planning.png">
+            <ShellContent
+            Title="Planification"
+            ContentTemplate="{DataTemplate local:PlanningPage}"
+            Route="Planning"
+            Shell.NavBarIsVisible="False"/>
+        </Tab>
+        <Tab Title="Profil" Icon="profil.png">
+            <ShellContent
+                Title="Profil"
+                ContentTemplate="{DataTemplate local:ProfilPage}"
+                Route="Profil"
+                Shell.NavBarIsVisible="False"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
