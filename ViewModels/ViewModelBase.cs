@@ -32,6 +32,10 @@ namespace PlanMyMeal_Domain.ViewModels
             {
                 await Shell.Current.GoToAsync("//Forgout");
             }
+            else if (destination == "setting")
+            {
+                await Shell.Current.GoToAsync("//Setting");
+            }
         }
     }
 }
