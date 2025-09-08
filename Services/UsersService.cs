@@ -1,6 +1,7 @@
 ﻿using PlanMyMeal.Domain.Models;
 using PlanMyMeal_Domain.Interfaces;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
@@ -82,6 +83,42 @@ namespace PlanMyMeal_Domain.Services
                 Debug.WriteLine(ex);
                 return null;
             }
+        }
+
+        public async Task<bool> UploadImage(string userId, FileResult image)
+        {
+            var uri = $"Users/PostImage?userId={userId}";
+
+            using var imageStream = await image.OpenReadAsync();
+            var imageName = image.FileName;
+
+            var content = new MultipartFormDataContent();
+            var fileContent = new StreamContent(imageStream);
+
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+            content.Add(fileContent, "image", imageName);
+
+            var response = await _httpClient.PostAsync(uri, content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return false;
+            }
+
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            using var doc = JsonDocument.Parse(responseContent);
+            var imageUrl = doc.RootElement.GetProperty("url").GetString();
+
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                return false;
+            }
+
+            var putImage = await _httpClient.PutAsync($"Users/PutImage?userId={userId}&imageUrl={imageUrl}", null);
+
+
+            return putImage.IsSuccessStatusCode;
         }
     }
 }
