@@ -8,6 +8,9 @@ namespace PlanMyMeal_Domain.ViewModels
         [ObservableProperty]
         private bool isRunning;
 
+        [ObservableProperty]
+        private bool isLoaded;
+
         [RelayCommand]
         public async Task NavigateTo(string destination)
         {
