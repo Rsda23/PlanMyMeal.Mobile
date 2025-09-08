@@ -31,28 +31,6 @@ namespace PlanMyMeal_Domain.ViewModels
 
 
         [RelayCommand]
-        private async Task NavigateTo(string destination)
-        {
-            if (string.IsNullOrEmpty(destination))
-            {
-                throw new Exception("La destination est vide ou null");
-            }
-
-            if (destination == "home")
-            {
-                await Shell.Current.GoToAsync("//Main");
-            }
-            else if (destination == "subscribe")
-            {
-                await Shell.Current.GoToAsync("//Subscribe");
-            }
-            else if (destination == "forgout")
-            {
-                await Shell.Current.GoToAsync("//Forgout");
-            }
-        }
-
-        [RelayCommand]
         private async Task ValidLogin()
         {
             try

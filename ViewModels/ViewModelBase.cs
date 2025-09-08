@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace PlanMyMeal_Domain.ViewModels
 {
@@ -6,5 +7,27 @@ namespace PlanMyMeal_Domain.ViewModels
     {
         [ObservableProperty]
         private bool isRunning;
+
+        [RelayCommand]
+        public async Task NavigateTo(string destination)
+        {
+            if (string.IsNullOrEmpty(destination))
+            {
+                throw new Exception("La destination est vide ou null");
+            }
+
+            if (destination == "home")
+            {
+                await Shell.Current.GoToAsync("//Main");
+            }
+            else if (destination == "subscribe")
+            {
+                await Shell.Current.GoToAsync("//Subscribe");
+            }
+            else if (destination == "forgout")
+            {
+                await Shell.Current.GoToAsync("//Forgout");
+            }
+        }
     }
 }
