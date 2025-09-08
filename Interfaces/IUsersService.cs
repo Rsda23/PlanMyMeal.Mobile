@@ -6,5 +6,6 @@ namespace PlanMyMeal_Domain.Interfaces
     {
         public Task<User?> GetUserByEmail(string email);
         public Task<bool> PostUser(User user);
+        public Task<User?> GetUserById(string userId);
     }
 }

@@ -60,5 +60,28 @@ namespace PlanMyMeal_Domain.Services
             }
         }
 
+        public async Task<User?> GetUserById(string userId)
+        {
+            try
+            {
+                var uri = $"Users/GetUserById?userId={userId}";
+                var response = await _httpClient.GetAsync(uri);
+                var data = await response.Content.ReadAsStringAsync();
+                var user = JsonSerializer.Deserialize<User>(data);
+                if (user != null)
+                {
+                    return user;
+                }
+                else
+                {
+                    throw new Exception("L'utilisateur est null");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
     }
 }
