@@ -4,40 +4,81 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="PlanMyMeal_Domain.RecipePage"
              Title="RecipePage">
+    
     <VerticalStackLayout>
-        <Label Text="Recettes" FontAttributes="Bold" FontSize="24" HorizontalTextAlignment="Center" Margin="0,30,0,10" />
+        <Label Text="Recettes" 
+               FontAttributes="Bold" 
+               FontSize="24" 
+               HorizontalTextAlignment="Center"
+               Margin="0,30,0,10" />
+        
         <Grid ColumnDefinitions="*,Auto">
-
             <VerticalStackLayout>
-                <Frame Margin="20, 0, 20, 10" Padding="0" CornerRadius="20" HasShadow="True"  BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
-                    <SearchBar Margin="10,0,10,0" Placeholder="Rechercher une recette"/>
+                <Frame Margin="20, 0, 20, 10" 
+                       Padding="0" 
+                       CornerRadius="20" 
+                       HasShadow="True"  
+                       BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}">
+                    <SearchBar Margin="10,0,10,0" 
+                               Placeholder="Rechercher une recette"/>
                 </Frame>
-                <Button Text="Filtrer" Clicked="FilterButton" WidthRequest="100" Margin="20, 10 ,0, 10" HorizontalOptions="Start" />
+                
+                <Button Text="Filtrer"
+                        Command="{Binding FilterCommand}"
+                        WidthRequest="100" 
+                        Margin="20, 10 ,0, 10" 
+                        HorizontalOptions="Start" />
             </VerticalStackLayout>
         </Grid>
-        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}" CornerRadius="10" Padding="10" Margin="20, 5">
-            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                <Frame WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
-                    <Image Source="empty.png" Aspect="AspectFill" />
+        
+        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}" 
+               CornerRadius="10"
+               Padding="10" 
+               Margin="20, 5">
+            <HorizontalStackLayout Spacing="10" 
+                                   VerticalOptions="Center">
+                <Frame WidthRequest="50" 
+                       HeightRequest="50" 
+                       BackgroundColor="Transparent" 
+                       BorderColor="Transparent"
+                       Padding="0">
+                    <Image Source="empty.png"
+                           Aspect="AspectFill" />
                 </Frame>
-                <Label Text="Nom de la recette 1" FontSize="16" VerticalOptions="Center" />
+                
+                <Label Text="Nom de la recette 1" 
+                       FontSize="16"
+                       VerticalOptions="Center" />
             </HorizontalStackLayout>
         </Frame>
-        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}" CornerRadius="10" Padding="10" Margin="20, 5">
-            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
-                <Frame WidthRequest="50" HeightRequest="50" BackgroundColor="Transparent" BorderColor="Transparent" Padding="0">
-                    <Image Source="empty.png" Aspect="AspectFill" />
+        
+        <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}"
+               CornerRadius="10" 
+               Padding="10" 
+               Margin="20, 5">
+            <HorizontalStackLayout Spacing="10" 
+                                   VerticalOptions="Center">
+                <Frame WidthRequest="50"
+                       HeightRequest="50" 
+                       BackgroundColor="Transparent" 
+                       BorderColor="Transparent"
+                       Padding="0">
+                    <Image Source="empty.png" 
+                           Aspect="AspectFill" />
                 </Frame>
-                <Label Text="Nom de la recette 2" FontSize="16" VerticalOptions="Center"/>
+                
+                <Label Text="Nom de la recette 2" 
+                       FontSize="16" 
+                       VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Frame>
-        <Button HorizontalOptions="End" Margin="20, 5" HeightRequest="45" WidthRequest="80" Text="Ajouter" Clicked="AddRecipe"/>
-        <ListView x:Name="RecipeListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding UserId}" Detail="{Binding Jwt}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+        <Button HorizontalOptions="End" 
+                Margin="20, 5" 
+                HeightRequest="45" 
+                WidthRequest="80" 
+                Text="Ajouter" 
+                Command="{Binding NavigateToCommand}"
+                CommandParameter="addRecipe"/>
     </VerticalStackLayout>
 </ContentPage>
