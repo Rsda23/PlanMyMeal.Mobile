@@ -39,6 +39,10 @@ namespace PlanMyMeal_Domain.ViewModels
             {
                 await Shell.Current.GoToAsync("//Setting");
             }
+            else if (destination == "addRecipe")
+            {
+                await Shell.Current.GoToAsync("//AddRecipe");
+            }
         }
     }
 }
