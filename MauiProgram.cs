@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using PlanMyMeal_Domain.Extensions;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace PlanMyMeal_Domain
@@ -9,10 +10,9 @@ namespace PlanMyMeal_Domain
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
-            builder.Services.AddTransient<RecipePage>();
-            builder.Services.AddTransient<SubscribePage>();
-            builder.Services.AddTransient<LoginPage>();
-            builder.Services.AddTransient<ProfilPage>();
+            builder.Services.AddPlanMyMealModels();
+            builder.Services.AddPlanMyMealView();
+           
             builder.ConfigureSyncfusionCore();
             builder
                 .UseMauiApp<App>()
