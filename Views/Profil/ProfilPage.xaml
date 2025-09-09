@@ -111,8 +111,7 @@
                 </VerticalStackLayout>
             </Frame>
             
-            <Button Clicked="Btn_Login" 
-                    Command="{Binding NavigateToCommand}"
+            <Button Command="{Binding NavigateToCommand}"
                     CommandParameter="login"
                     Text="Déconnexion"  
                     FontAttributes="Bold" 
