@@ -66,7 +66,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
 		<PackageReference Include="MongoDB.Driver" Version="3.1.0" />
-		<PackageReference Include="PlanMyMeal.Domain" Version="1.0.0" />
+		<PackageReference Include="PlanMyMeal.Domain" Version="1.2.0" />
 		<PackageReference Include="Syncfusion.Maui.Calendar" Version="28.1.39" />
 	</ItemGroup>
 
