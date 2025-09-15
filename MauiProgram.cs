@@ -20,12 +20,12 @@ namespace PlanMyMeal_Domain
 
             builder.Services.AddHttpClient<IUsersService, UsersService>(client =>
             {
-                client.BaseAddress = new Uri("#lien azure");
+                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
             });
 
             builder.Services.AddHttpClient<IRecipesService, RecipesService>(client =>
             {
-                client.BaseAddress = new Uri("#lien azure");
+                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
             });
 
             builder
