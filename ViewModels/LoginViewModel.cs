@@ -1,16 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PlanMyMeal.Domain.Models;
-using PlanMyMeal_Domain.Services;
+using PlanMyMeal_Domain.Interfaces;
 
 namespace PlanMyMeal_Domain.ViewModels
 {
 
     public partial class LoginViewModel : ViewModelBase
     {
-        private readonly UsersService _usersService;
+        private readonly IUsersService _usersService;
 
-        public LoginViewModel(UsersService usersService)
+        public LoginViewModel(IUsersService usersService)
         {
             _usersService = usersService;
         }
