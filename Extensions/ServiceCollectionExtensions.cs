@@ -1,5 +1,4 @@
-﻿using PlanMyMeal_Domain.Services;
-using PlanMyMeal_Domain.ViewModels;
+﻿using PlanMyMeal_Domain.ViewModels;
 
 namespace PlanMyMeal_Domain.Extensions
 {
@@ -17,9 +16,6 @@ namespace PlanMyMeal_Domain.Extensions
             services.AddTransient<AddRecipePage>();
             services.AddTransient<Filter>();
             services.AddTransient<SettingPage>();
-
-            services.AddTransient<RecipesService>();
-            services.AddTransient<UsersService>();
 
             return services;
         }
