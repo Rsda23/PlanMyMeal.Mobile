@@ -20,7 +20,7 @@ namespace PlanMyMeal_Domain.Services
         {
             try
             {
-                var uri = $"Users/GetUserByEmail?email={email}";
+                var uri = $"GetUserByEmail?email={email}";
                 var response = await _httpClient.GetAsync(uri);
                 var data = await response.Content.ReadAsStringAsync();
                 var user = JsonSerializer.Deserialize<User>(data);
@@ -44,7 +44,7 @@ namespace PlanMyMeal_Domain.Services
         {
             try
             {
-                var uri = $"Users/PostUser";
+                var uri = $"PostUser";
 
                 var jsonContent = JsonSerializer.Serialize(user);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -65,7 +65,7 @@ namespace PlanMyMeal_Domain.Services
         {
             try
             {
-                var uri = $"Users/GetUserById?userId={userId}";
+                var uri = $"GetUserById?userId={userId}";
                 var response = await _httpClient.GetAsync(uri);
                 var data = await response.Content.ReadAsStringAsync();
                 var user = JsonSerializer.Deserialize<User>(data);
@@ -87,7 +87,7 @@ namespace PlanMyMeal_Domain.Services
 
         public async Task<bool> UploadImage(string userId, FileResult image)
         {
-            var uri = $"Users/PostImage?userId={userId}";
+            var uri = $"PostImage?userId={userId}";
 
             using var imageStream = await image.OpenReadAsync();
             var imageName = image.FileName;
