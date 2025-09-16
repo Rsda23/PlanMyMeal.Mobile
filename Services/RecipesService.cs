@@ -17,7 +17,7 @@ namespace PlanMyMeal_Domain.Services
         {
             try
             {
-                var uri = $"Recipes/GetRecipesByUserId?userId={userId}";
+                var uri = $"GetRecipesByUserId?userId={userId}";
                 var response = await _httpClient.GetAsync(uri);
                 var data = await response.Content.ReadAsStringAsync();
                 var recipes = JsonSerializer.Deserialize<List<Recipe>>(data);
