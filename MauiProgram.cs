@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using PlanMyMeal_Domain.Extensions;
-using PlanMyMeal_Domain.Interfaces;
-using PlanMyMeal_Domain.Services;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace PlanMyMeal_Domain
@@ -17,16 +15,6 @@ namespace PlanMyMeal_Domain
             builder.Services.AddPlanMyMealView();
            
             builder.ConfigureSyncfusionCore();
-
-            builder.Services.AddHttpClient<IUsersService, UsersService>(client =>
-            {
-                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
-            });
-
-            builder.Services.AddHttpClient<IRecipesService, RecipesService>(client =>
-            {
-                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
-            });
 
             builder
                 .UseMauiApp<App>()

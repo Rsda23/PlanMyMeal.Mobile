@@ -1,4 +1,6 @@
-﻿using PlanMyMeal_Domain.ViewModels;
+﻿using PlanMyMeal_Domain.Interfaces;
+using PlanMyMeal_Domain.Services;
+using PlanMyMeal_Domain.ViewModels;
 
 namespace PlanMyMeal_Domain.Extensions
 {
@@ -16,6 +18,16 @@ namespace PlanMyMeal_Domain.Extensions
             services.AddTransient<AddRecipePage>();
             services.AddTransient<Filter>();
             services.AddTransient<SettingPage>();
+
+            services.AddHttpClient<IUsersService, UsersService>(client =>
+            {
+                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
+            });
+
+            services.AddHttpClient<IRecipesService, RecipesService>(client =>
+            {
+                client.BaseAddress = new Uri("https://planmymeal-e8cuemhuexasdfht.francecentral-01.azurewebsites.net/");
+            });
 
             return services;
         }
