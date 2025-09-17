@@ -58,6 +58,8 @@ namespace PlanMyMeal_Domain.ViewModels
                     return;
                 }
 
+                Preferences.Set("UserId", user.UserId);
+
                 await NavigateTo("home");
             }
             catch (Exception ex)
