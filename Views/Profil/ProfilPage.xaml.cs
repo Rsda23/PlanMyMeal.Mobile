@@ -21,4 +21,10 @@ public partial class ProfilPage : ContentPage
             Application.Current.UserAppTheme = isDarkMode ? AppTheme.Dark : AppTheme.Light;
         }
     }
+
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+        await _profilViewModel.LoadUser();
+    }
 }
