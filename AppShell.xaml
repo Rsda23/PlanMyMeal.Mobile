@@ -7,59 +7,57 @@
     Shell.FlyoutBehavior="Disabled"
     Title="PlanMyMeal_Domain">
 
-    <ShellContent
-        Title="Connexion"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="Login"
-        Shell.NavBarIsVisible="False"/>
-    <ShellContent
-        Title="Recuperation"
-        ContentTemplate="{DataTemplate local:ForgoutPage}"
-        Route="Forgout"
-        Shell.NavBarIsVisible="False"/>
-    <ShellContent
-        Title="Inscription"
-        ContentTemplate="{DataTemplate local:SubscribePage}"
-        Route="Subscribe"
-        Shell.NavBarIsVisible="False"/>
-    <ShellContent
-        Title="Parametre"
-        ContentTemplate="{DataTemplate local:SettingPage}"
-        Route="Setting"
-        Shell.NavBarIsVisible="False"/>
-    <ShellContent
-        Title="AjouterRecette"
-        ContentTemplate="{DataTemplate local:AddRecipePage}"
-        Route="AddRecipe"
-        Shell.NavBarIsVisible="False"/>
+    <ShellContent Title="Connexion"
+                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  Route="Login"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"/>
+    
+    <ShellContent Title="Recuperation"
+                  ContentTemplate="{DataTemplate local:ForgoutPage}"
+                  Route="Forgout"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"/>
+    
+    <ShellContent Title="Inscription"
+                  ContentTemplate="{DataTemplate local:SubscribePage}"
+                  Route="Subscribe"
+                  Shell.NavBarIsVisible="False"
+                  Shell.TabBarIsVisible="False"/>
+
+    <!--Tab Navigation-->
     <TabBar>
-        <Tab Title="Accueil" Icon="home.png">
-            <ShellContent
-                Title="Accueil"
-                ContentTemplate="{DataTemplate local:MainPage}"
-                Route="Main"
-                Shell.NavBarIsVisible="False"/>
+        <Tab Title="Accueil" 
+             Icon="home.png">
+            <ShellContent Title="Accueil"
+                          ContentTemplate="{DataTemplate local:MainPage}"
+                          Route="Main"
+                          Shell.NavBarIsVisible="False"/>
         </Tab>
-        <Tab Title="Recettes" Icon="recipe.png">
-            <ShellContent
-            Title="Recettes"
-            ContentTemplate="{DataTemplate local:RecipePage}"
-            Route="Recipe"
-            Shell.NavBarIsVisible="False"/>
+        
+        <Tab Title="Recettes" 
+             Icon="recipe.png"
+             Route="RecipesTab">
+            <ShellContent Title="Recettes"
+                          ContentTemplate="{DataTemplate local:RecipePage}"
+                          Route="Recipe"
+                          Shell.NavBarIsVisible="False"/>
         </Tab>
-        <Tab Title="Planification" Icon="planning.png">
-            <ShellContent
-            Title="Planification"
-            ContentTemplate="{DataTemplate local:PlanningPage}"
-            Route="Planning"
-            Shell.NavBarIsVisible="False"/>
+        
+        <Tab Title="Planification" 
+             Icon="planning.png">
+            <ShellContent Title="Planification"
+                          ContentTemplate="{DataTemplate local:PlanningPage}"
+                          Route="Planning"
+                          Shell.NavBarIsVisible="False"/>
         </Tab>
-        <Tab Title="Profil" Icon="profil.png">
-            <ShellContent
-                Title="Profil"
-                ContentTemplate="{DataTemplate local:ProfilPage}"
-                Route="Profil"
-                Shell.NavBarIsVisible="False"/>
+        
+        <Tab Title="Profil" 
+             Icon="profil.png">
+            <ShellContent Title="Profil"
+                          ContentTemplate="{DataTemplate local:ProfilPage}"
+                          Route="Profil"
+                          Shell.NavBarIsVisible="False"/>
         </Tab>
     </TabBar>
 

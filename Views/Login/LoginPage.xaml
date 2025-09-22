@@ -42,7 +42,7 @@
                                FontSize="11"/>
 
                         <ImageButton Grid.Column="1"
-                                     IsVisible="{Binding IsVisible, Converter={StaticResource InvertedBoolConverter}}" 
+                                     IsVisible="{Binding IsVisible, Converter={StaticResource InvertedBool}}" 
                                      Source="eye_line.png" 
                                      HeightRequest="40"
                                      WidthRequest="20"
