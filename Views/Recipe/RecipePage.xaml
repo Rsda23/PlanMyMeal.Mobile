@@ -51,7 +51,7 @@
                        VerticalOptions="Center" />
             </HorizontalStackLayout>
         </Frame>
-        
+
         <Frame BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2E2E3F}"
                CornerRadius="10" 
                Padding="10" 
@@ -66,19 +66,11 @@
                     <Image Source="empty.png" 
                            Aspect="AspectFill" />
                 </Frame>
-                
+
                 <Label Text="Nom de la recette 2" 
                        FontSize="16" 
                        VerticalOptions="Center"/>
             </HorizontalStackLayout>
         </Frame>
-
-        <Button HorizontalOptions="End" 
-                Margin="20, 5" 
-                HeightRequest="45" 
-                WidthRequest="80" 
-                Text="Ajouter" 
-                Command="{Binding NavigateToCommand}"
-                CommandParameter="addRecipe"/>
     </VerticalStackLayout>
 </ContentPage>
