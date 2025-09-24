@@ -110,8 +110,7 @@
                 </VerticalStackLayout>
             </Frame>
             
-            <Button Command="{Binding NavigateToCommand}"
-                    CommandParameter="login"
+            <Button Command="{Binding DisconnectCommand}"
                     Text="Déconnexion"  
                     FontAttributes="Bold" 
                     HeightRequest="45" 

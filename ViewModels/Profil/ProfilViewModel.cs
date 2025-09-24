@@ -28,6 +28,13 @@ namespace PlanMyMeal_Domain.ViewModels
 
 
         [RelayCommand]
+        private async Task Disconnect()
+        {
+            Preferences.Remove("UserId");
+            await NavigateTo("login");
+        }
+
+        [RelayCommand]
         private async Task EditImage()
         {
             bool confirm = await Shell.Current.DisplayAlert(
