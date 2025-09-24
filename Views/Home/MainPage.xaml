@@ -14,9 +14,6 @@
                 Margin="0, 20"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Button
-                Text="Transfert sur LoginPage"
-                Clicked="Btn_Login"/>
             <Label
                 Text="Test 1" 
                 VerticalOptions="Center"
